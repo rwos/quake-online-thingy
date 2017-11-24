@@ -20,6 +20,7 @@ build:
 submodules:
 	git submodule deinit --all
 	git submodule update --init --recursive
+	git submodule update --remote --merge
 
 deps:
 	./emsdk-portable/emsdk update
