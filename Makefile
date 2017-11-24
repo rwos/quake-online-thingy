@@ -19,8 +19,8 @@ build:
 
 submodules:
 	git submodule deinit --all -f
-	git submodule update --init --recursive
 	git submodule sync
+	git submodule update --init --recursive
 	git submodule update --remote --merge
 
 deps:
