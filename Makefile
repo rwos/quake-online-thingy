@@ -32,5 +32,7 @@ deps:
 emsdk-portable/emsdk:
 	wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
 	tar -xvzf emsdk-portable.tar.gz
+	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+	echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 	apt-get update -y
 	apt-get install git build-essential cmake python2.7 nodejs default-jre yarn
