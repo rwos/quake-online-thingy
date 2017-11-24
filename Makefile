@@ -1,8 +1,10 @@
-all: submodules deps
+init: submodules deps
+
+all:
 	$(MAKE) build
 
 build:
-	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=./emsdk-portable/emsdk ### XXX ??? probably wrong
+	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=$(shell pws)/emsdk-portable/emcc ### XXX ??? probably wrong
 	cd quakejs && npm install
 
 submodules:
