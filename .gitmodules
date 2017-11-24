@@ -1,3 +1,3 @@
 [submodule "quakejs"]
 	path = quakejs
-	url = git@github.com:inolen/quakejs.git
+	url = https://github.com/inolen/quakejs.git
