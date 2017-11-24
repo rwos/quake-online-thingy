@@ -1,4 +1,4 @@
-EMCC_VERSION=sdk-tag-1.28.2-64bit
+EMCC_VERSION=1.37.22
 EMCC_PATH=$(shell pwd)/emsdk-portable/emscripten/$(EMCC_VERSION)
 
 init: submodules emsdk-portable/emsdk deps
