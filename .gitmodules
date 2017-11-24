@@ -1,0 +1,3 @@
+[submodule "quakejs"]
+	path = quakejs
+	url = https://github.com/inolen/quakejs
