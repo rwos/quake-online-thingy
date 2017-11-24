@@ -1,5 +1,5 @@
 EMCC_VERSION=1.37.22
-EMCC=$(shell pwd)/emsdk-portable/emscripten/$(EMCC_VERSION)/emcc
+EMCC_PATH=$(shell pwd)/emsdk-portable/emscripten/$(EMCC_VERSION)
 
 init: submodules deps
 
@@ -7,8 +7,8 @@ all:
 	$(MAKE) build
 
 build:
-	$(EMCC) -v
-	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=$(EMCC)
+	$(EMCC_PATH)/emcc -v
+	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=$(EMCC_PATH)
 	cd quakejs && npm install
 
 submodules:
