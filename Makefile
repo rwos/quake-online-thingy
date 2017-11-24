@@ -8,6 +8,7 @@ all:
 
 build:
 	$(EMCC_PATH)/emcc -v
+	$(EMCC_PATH)/emcc --clear-cache
 	# build wants a normal .git dir
 	mv quakejs/ioq3/.git quakejs/ioq3/.git_bak
 	ln -s .git/modules/quakejs/modules/ioq3 quakejs/ioq3/.git

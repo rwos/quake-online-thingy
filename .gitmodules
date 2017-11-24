@@ -1,3 +1,3 @@
 [submodule "quakejs"]
 	path = quakejs
-	url = https://github.com/anthonylauzon/quakejs.git
+	url = https://github.com/rwos/quakejs.git
