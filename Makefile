@@ -15,7 +15,7 @@ build:
 	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=$(EMCC_PATH)
 	rm quakejs/ioq3/.git
 	mv quakejs/ioq3/.git_bak quakejs/ioq3/.git
-	cd quakejs && npm install
+	cd quakejs && yarn
 
 submodules:
 	git submodule deinit --all -f
@@ -33,5 +33,4 @@ emsdk-portable/emsdk:
 	wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
 	tar -xvzf emsdk-portable.tar.gz
 	apt-get update -y
-	apt-get install git build-essential cmake python2.7 nodejs default-jre
-	curl -L https://npmjs.org/install.sh | sh
+	apt-get install git build-essential cmake python2.7 nodejs default-jre yarn
