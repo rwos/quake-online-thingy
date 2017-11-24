@@ -34,3 +34,4 @@ emsdk-portable/emsdk:
 	tar -xvzf emsdk-portable.tar.gz
 	apt-get update -y
 	apt-get install git build-essential cmake python2.7 nodejs default-jre
+	curl -L https://npmjs.org/install.sh | sh
