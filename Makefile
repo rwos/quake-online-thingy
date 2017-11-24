@@ -17,6 +17,7 @@ build:
 	cd quakejs && npm install
 
 submodules:
+	git submodule deinit --all
 	git submodule update --init --recursive
 
 deps:
