@@ -22,8 +22,8 @@ submodules:
 
 deps:
 	./emsdk-portable/emsdk update
-	./emsdk-portable/emsdk install $(EMCC_VERSION)
-	./emsdk-portable/emsdk activate $(EMCC_VERSION)
+	./emsdk-portable/emsdk install sdk-$(EMCC_VERSION)-64bit
+	./emsdk-portable/emsdk activate sdk-$(EMCC_VERSION)-64bit
 
 # https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#platform-notes-installation-instructions-sdk
 emsdk-portable/emsdk:
