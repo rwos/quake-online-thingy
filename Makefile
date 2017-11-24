@@ -36,3 +36,17 @@ emsdk-portable/emsdk:
 	echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 	apt-get update -y
 	apt-get install git build-essential cmake python2.7 nodejs default-jre yarn
+
+apache-proxy-deps:
+	a2enmod proxy
+	a2enmod proxy_http
+	a2enmod proxy_ajp
+	a2enmod rewrite
+	a2enmod deflate
+	a2enmod headers
+	a2enmod proxy_balancer
+	a2enmod proxy_connect
+	a2enmod proxy_html
+	cp quake.conf /etc/apache2/sites-available/
+	ln -s /etc/apache2/sites-available/quake.conf /etc/apache2/sites-enabled/quake.conf
+	systemctl restart apache2
