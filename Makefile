@@ -8,7 +8,12 @@ all:
 
 build:
 	$(EMCC_PATH)/emcc -v
+	# build wants a normal .git dir
+	mv quakejs/ioq3/.git quakejs/ioq3/.git_bak
+	ln -s .git/modules/quakejs/modules/ioq3 quakejs/ioq3/.git
 	$(MAKE) -C quakejs/ioq3 PLATFORM=js EMSCRIPTEN=$(EMCC_PATH)
+	rm quakejs/ioq3/.git
+	mv quakejs/ioq3/.git_bak quakejs/ioq3/.git
 	cd quakejs && npm install
 
 submodules:
