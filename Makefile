@@ -1,7 +1,7 @@
-EMCC_VERSION=1.37.22
+EMCC_VERSION=sdk-tag-1.28.2-64bit
 EMCC_PATH=$(shell pwd)/emsdk-portable/emscripten/$(EMCC_VERSION)
 
-init: submodules deps
+init: submodules emsdk-portable/emsdk deps
 
 all:
 	$(MAKE) build
@@ -19,10 +19,10 @@ build:
 submodules:
 	git submodule update --init --recursive
 
-deps: emsdk-portable/emsdk
+deps:
 	./emsdk-portable/emsdk update
-	./emsdk-portable/emsdk install latest
-	./emsdk-portable/emsdk activate latest
+	./emsdk-portable/emsdk install $(EMCC_VERSION)
+	./emsdk-portable/emsdk activate $(EMCC_VERSION)
 
 # https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#platform-notes-installation-instructions-sdk
 emsdk-portable/emsdk:
